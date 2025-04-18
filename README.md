@@ -87,3 +87,4 @@ Made with ❤️ by **Jitendra C**
 ## 📄 License
 
 This project is licensed under the MIT License – feel free to use and modify.
+# expense_tracker
