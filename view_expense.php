@@ -94,7 +94,7 @@ $categoryOptions = mysqli_query($link, "SELECT * FROM categories");
       <div class="row g-3 align-items-end">
         <!-- Category Dropdown -->
         <div class="col-md-4">
-          <label for="category" class="form-label">Filter by Category</label>
+          <label for="category" class="form-label"></label>
           <select name="category" id="category" class="form-select">
             <option value="">All Categories</option>
             <?php while ($cat = mysqli_fetch_assoc($categoryOptions)): ?>
@@ -107,13 +107,13 @@ $categoryOptions = mysqli_query($link, "SELECT * FROM categories");
 
         <!-- Date Filter -->
         <div class="col-md-3">
-          <label for="date" class="form-label">Filter by Date</label>
+          <label for="date" class="form-label"></label>
           <input type="date" name="date" id="date" class="form-control" value="<?= htmlspecialchars($_GET['date'] ?? '') ?>">
         </div>
 
         <!-- Sorting -->
         <div class="col-md-3">
-          <label for="sort" class="form-label">Sort By</label>
+          <label for="sort" class="form-label"></label>
           <select name="sort" id="sort" class="form-select">
             <option value="">Default</option>
             <option value="expense_asc" <?= (($_GET['sort'] ?? '') === 'expense_asc') ? 'selected' : '' ?>>Amount (Low to High)</option>

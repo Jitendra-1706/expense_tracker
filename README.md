@@ -1,4 +1,4 @@
-# 📊 Personal Budget Tracker
+# 📊 Daily Expense Tracker
 
 A full-stack web application to track and visualize daily expenses. Built with PHP and MySQL, it includes user authentication, dynamic charts, and a clean Bootstrap-powered UI.
 
@@ -26,10 +26,7 @@ A full-stack web application to track and visualize daily expenses. Built with P
 ## 📸 Screenshots
 
 assets/images/
-![alt text](<assets/images/Screenshot 2025-04-14 202513.png>)
-![alt text](<assets/images/Screenshot 2025-04-14 202525.png>)
-![alt text](<assets/images/Screenshot 2025-04-14 202535.png>)
-![alt text](<assets/images/Screenshot 2025-04-14 202535.png>)
+
 ---
 
 ## ⚙️ Installation
