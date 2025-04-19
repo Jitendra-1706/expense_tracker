@@ -48,7 +48,7 @@ if (isset($_POST["submit"])) {
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/expense_tracker/assets/css/login.css">
+    <link rel="stylesheet" href="/expense_tracker/assets/css/login.css?v=timestamp">
 
   </head>
   <body>
@@ -58,12 +58,14 @@ if (isset($_POST["submit"])) {
   <h1>Login</h1>
 
   <div class="input-box">
-    <input type="text" name="username" placeholder="Username or Email" required>
+    <input type="text" name="username" id="user" class="input-field" required>
+    <label for="user" class="label">Username</label>
     <i class='bx bxs-user'></i>
   </div>
 
   <div class="input-box">
-    <input type="password" name="password" placeholder="Password" required>
+    <input type="password" name="password" id="pass" class="input-field"  required>
+    <label for="pass" class="label">Password</label>
     <i class='bx bxs-lock-alt'></i>
   </div>
 

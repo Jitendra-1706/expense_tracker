@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
     <i class='bx bxs-lock-alt'></i>
   </div>
   <div class="input-box">
-    <input type="password" name="re-enterpassword" placeholder="Password" required>
+    <input type="password" name="re-enterpassword" placeholder="Re-Enter Password" required>
     <i class='bx bxs-lock-alt'></i>
   </div>
 
