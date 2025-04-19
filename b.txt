@@ -6,3 +6,25 @@ Copy
 Edit
 <link rel="stylesheet" href="./assets/css/add.css?v=<?= time() ?>">
 ✅ This "?v=timestamp" trick fools the browser into thinking it's a new file, so it loads the latest version every time.
+
+
+
+ /* body {
+  position: relative;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/2.jpg') no-repeat center center;
+  background-size: cover;
+  filter: blur(20px);
+  transform: scale(1.1);  Prevents edge blur 
+  z-index: -1;
+} */

@@ -63,11 +63,11 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 
 <div class="container mt-5">
-  <h3 class="mb-4">Your Expenses</h3>
+  <h3 class="mb-4 text-white">Your Expenses</h3>
 
   <!-- Mode Switcher (Date or Category) -->
   <form method="get" class="mb-3 d-flex align-items-center">
-    <label for="mode" class="me-2">View By:</label>
+    <label for="mode" class="me-2 text-white">View By:</label>
     <select name="mode" id="mode" class="form-select w-auto me-3" onchange="this.form.submit()">
       <option value="date" <?= $mode === 'date' ? 'selected' : '' ?>>Date</option>
       <option value="category" <?= $mode === 'category' ? 'selected' : '' ?>>Category</option>
@@ -76,7 +76,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <!-- Chart Type Switch Buttons -->
     <div>
       <button type="button" class="btn btn-outline-primary me-2" onclick="switchChart('line')">Line</button>
-      <button type="button" class="btn btn-outline-secondary" onclick="switchChart('bar')">Bar</button>
+      <button type="button" class="btn btn-outline-warning" onclick="switchChart('bar')">Bar</button>
     </div>
   </form>
 
@@ -92,58 +92,67 @@ while ($row = mysqli_fetch_assoc($result)) {
   let currentType = 'line';
   const ctx = document.getElementById('expenseChart').getContext('2d');
 
-  let chart = new Chart(ctx, {
-    type: currentType,
+  const chartConfig = (type) => ({
+    type: type,
     data: {
       labels: labels,
       datasets: [{
         label: 'Total Expense (₹)',
         data: data,
-        backgroundColor: 'rgba(75, 192, 192, 0.3)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: type === 'bar' ? 'rgba(255, 159, 64, 0.4)' : 'rgba(54, 162, 235, 0.3)',
+        borderColor: type === 'bar' ? 'rgba(255, 159, 64, 1)' : 'rgba(54, 162, 235, 1)',
         borderWidth: 2,
-        fill: true,
-        tension: 0.4
+        fill: type === 'line',
+        tension: 0.4,
+        pointBackgroundColor: '#ffffff', // dots
+        pointBorderColor: type === 'bar' ? 'rgba(255, 159, 64, 1)' : 'rgba(54, 162, 235, 1)'
       }]
     },
     options: {
       responsive: true,
+      plugins: {
+        legend: {
+          labels: {
+            color: '#ffffff' // legend text color
+          }
+        },
+        tooltip: {
+          backgroundColor: '#222',
+          titleColor: '#fff',
+          bodyColor: '#ccc'
+        }
+      },
       scales: {
+        x: {
+          ticks: {
+            color: '#ffffff' // x-axis labels
+          },
+          grid: {
+            color: 'rgba(255, 255, 255, 0.1)' // x-axis grid
+          }
+        },
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          ticks: {
+            color: '#ffffff' // y-axis labels
+          },
+          grid: {
+            color: 'rgba(255, 255, 255, 0.1)' // y-axis grid
+          }
         }
       }
     }
   });
 
+  let chart = new Chart(ctx, chartConfig(currentType));
+
   function switchChart(type) {
     chart.destroy();
-    chart = new Chart(ctx, {
-      type: type,
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Total Expense (₹)',
-          data: data,
-          backgroundColor: type === 'bar' ? 'rgba(255, 99, 132, 0.5)' : 'rgba(75, 192, 192, 0.3)',
-          borderColor: type === 'bar' ? 'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)',
-          borderWidth: 2,
-          fill: type === 'line',
-          tension: 0.4
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
+    chart = new Chart(ctx, chartConfig(type));
     currentType = type;
   }
 </script>
+
 
 
 

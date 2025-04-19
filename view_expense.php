@@ -89,7 +89,8 @@ $result = mysqli_query($link, $sql);
 $categoryOptions = mysqli_query($link, "SELECT * FROM categories");
 ?>
 
-<!-- 📦 Expense Filters and Table -->
+<section class="section">
+  <!-- 📦 Expense Filters and Table -->
 <div class="container mt-5">
   <div class="row">
     <form method="GET" class="mb-4">
@@ -166,6 +167,7 @@ $categoryOptions = mysqli_query($link, "SELECT * FROM categories");
   </table>
 </div>
 
+</section>
 
 
 

@@ -19,6 +19,8 @@
         /* background-color: rgba(255, 255, 255, 0.2) !important; */
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
+        border-bottom: 2px solid rgba(139, 139, 139, 0.554);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         /* border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; */
       }
       
@@ -39,7 +41,7 @@
         background-color: rgba(255, 255, 255, 0.2) !important;
       }
 
-      body {
+      /* body {
         position: relative;
         min-height: 100vh;
         overflow: hidden;
@@ -55,11 +57,30 @@
         background: url('../images/16.jpg') no-repeat center center;
         background-size: cover;
         filter: blur(20px);
-        transform: scale(1.1); /* Prevents edge blur */
+        transform: scale(1.1);  Prevents edge blur 
         z-index: -1;
+    } */
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #232526, #414345);
+      overflow-x: hidden;
     }
     
+    .section {
+      min-height: 100vh;
+      padding-bottom: 2rem;
+    }
     
+    table {
+      background-color: transparent !important;
+    }
+    
+    .table tbody tr:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }  
 
 
 
