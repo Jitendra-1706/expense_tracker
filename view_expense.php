@@ -72,9 +72,11 @@ $result = mysqli_query($link, $sql);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Expense Teacker</title>
+    <title>View Expense</title>
     <?php include("./includes/header.php") ?>
     <link rel="shortcut icon" href="./assets/images/expense.png" type="image/x-icon">
+    <link rel="stylesheet" href="/expense_tracker/assets/css/view.css?v=timestamp">
+
     </head>
   <body>
     
@@ -134,7 +136,7 @@ $categoryOptions = mysqli_query($link, "SELECT * FROM categories");
 
 <!-- 💸 Expense Table -->
 <div class="container mt-2">
-  <h2 class="mb-4">My Expenses</h2>
+  <h2 class="mb-4 text-white">My Expenses</h2>
   <table class="table table-striped table-bordered">
     <thead class="table-dark">
       <tr>

@@ -34,10 +34,10 @@ $categoryResult = mysqli_query($link, $categoryQuery);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Expense Teacker</title>
+    <title>Add expense </title>
     <?php include("./includes/header.php") ?>
     <link rel="shortcut icon" href="./assets/images/expense.png" type="image/x-icon">
-    <link rel="stylesheet" href="/expense_tracker/assets/css/add.css">
+    <link rel="stylesheet" href="/expense_tracker/assets/css/add.css?v=timestamp">
 
     </head>
   <body>

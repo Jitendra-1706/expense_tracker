@@ -23,7 +23,11 @@ if (isset($_GET['expense_id'])) {
 }
 
 // Fetch all expenses for the user
-$query = "SELECT * FROM expense WHERE user_id = '$user_id' ORDER BY expense_date DESC";
+$query = "SELECT e.*, c.name AS category_name 
+          FROM expense e
+          JOIN categories c ON e.expense_category = c.category_id
+          WHERE e.user_id = '$user_id' 
+          ORDER BY e.expense_date DESC";
 $result = mysqli_query($link, $query);
 
 
@@ -41,6 +45,8 @@ $result = mysqli_query($link, $query);
     <title>Expense Teacker</title>
     <?php include("./includes/header.php") ?>
     <link rel="shortcut icon" href="./assets/images/expense.png" type="image/x-icon">
+    <link rel="stylesheet" href="/expense_tracker/assets/css/delete.css?v=timestamp">
+
     </head>
   <body>
     
@@ -50,7 +56,7 @@ $result = mysqli_query($link, $query);
 
     <!-- Table code -->
     <div class="container mt-2">
-      <h2 class="mb-4">My Expenses</h2>
+      <h2 class="mb-4 text-white">My Expenses</h2>
       <?php if (isset($_GET['msg']) && $_GET['msg'] === 'deleted'): ?>
         <div class="alert alert-success">Expense deleted successfully.</div>
       <?php endif; ?>
@@ -74,7 +80,7 @@ $result = mysqli_query($link, $query);
               echo "<td>" . $count++ . "</td>";
               echo "<td>₹" . htmlspecialchars($row['expense']) . "</td>";
               echo "<td>" . htmlspecialchars($row['expense_date']) . "</td>";
-              echo "<td>" . htmlspecialchars($row['expense_category']) . "</td>";
+              echo "<td>" . htmlspecialchars($row['category_name']) . "</td>";
               echo "<td>
                     <a href='delete_expense.php?expense_id=" . $row['expense_id'] . "' class='btn btn-sm btn-danger' onclick=\"return confirm('Are you sure you want to delete this expense?');\">Delete</a>
                   </td>";

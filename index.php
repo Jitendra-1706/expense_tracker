@@ -50,6 +50,8 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>Expense tracker / home</title>
     <?php include("./includes/header.php") ?>
     <link rel="shortcut icon" href="./assets/images/expense.png" type="image/x-icon">
+    <link rel="stylesheet" href="/expense_tracker/assets/css/index.css?v=timestamp">
+
     <!-- Include Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

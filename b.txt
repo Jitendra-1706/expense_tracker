@@ -1,36 +1,8 @@
- <div class="container mt-4">
-    <div class="row">
-      <div class="col-sm-12 col-md-4 d-block mx-auto">
-        <div class="card login-card p-4">
-          <form action="" method="post">
-            <!-- username -->
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" name="username" placeholder="name">
-              <label for="floatingInput">Enter your name</label>
-            </div>
-            <!-- username -->
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
-            </div>
-            <!-- password -->
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-              <label for="floatingPassword">Password</label>
-            </div>
+✅ Option 1: Force the browser to load the latest CSS
+Add a cache buster to the end of your CSS link in the HTML file:
 
-            <!-- re-password -->
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" name="re-enterpassword" placeholder="Re-Password">
-              <label for="floatingPassword">Re-Password</label>
-            </div>
-            <button type="submit" name="submit" value="submit" class="btn btn-warning text-warning-emphasis mt-4">Register</button>
-          </form>
-          <div class="d-flex justify-content-between mt-4">
-            <a href="" class="nav-link">Login</a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+html
+Copy
+Edit
+<link rel="stylesheet" href="./assets/css/add.css?v=<?= time() ?>">
+✅ This "?v=timestamp" trick fools the browser into thinking it's a new file, so it loads the latest version every time.
