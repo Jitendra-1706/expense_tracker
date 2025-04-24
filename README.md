@@ -27,6 +27,17 @@ A full-stack web application to track and visualize daily expenses. Built with P
 
 assets/images/
 
+Home page ->
+![alt text](<assets/images/Screenshot 2025-04-24 220748.png>)
+
+Add expense page ->
+![alt text](<assets/images/Screenshot 2025-04-24 220809.png>)
+
+View Expanse Page ->
+![alt text](<assets/images/Screenshot 2025-04-24 220834.png>)
+
+Delete Expense page ->
+![alt text](<assets/images/Screenshot 2025-04-24 220853.png>)
 ---
 
 ## ⚙️ Installation
